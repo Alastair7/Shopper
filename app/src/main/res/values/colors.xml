@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- CORNFLOWER BLUE PALETTE -->
+    <color name="cornflowerBlueBright3">#D9EBFC</color>
+    <color name="cornflowerBlueBright2">#A0CCF8</color>
+    <color name="cornflowerBlueBright1">#66ADF4</color>
+    <color name="cornflowerBlue">#5FA9F4</color>
+    <color name="cornflowerBlueDark1">#429CF0</color>
+    <color name="cornflowerBlueDark2">#1173D0</color>
+    <color name="cornflowerDark3">#051F39</color>
+
+    <!-- ASTRONAUT PALETTE -->
+    <color name="astronautBright3">#C1D5EB</color>
+    <color name="astronautBright2">#74A0D2</color>
+    <color name="astronautBright1">#376CA9</color>
+    <color name="astronaut">#274C77</color>
+    <color name="astronautDark1">#23466C</color>
+    <color name="astronautDark2">#14283E</color>
+    <color name="astronautDark3">#0A141F</color>
+
+    <!-- REEF PALETTE -->
+    <color name="reefBright3">#EDFFEB</color>
+    <color name="reefBright2">#DAFFD6</color>
+    <color name="reefBright1">#C8FFC2</color>
+    <color name="reef">#B2FFA9</color>
+    <color name="reefDark1">#A3FF99</color>
+    <color name="reefDark2">#7EFF70</color>
+    <color name="reefDark3">#0C7A00</color>
+
+    <!-- ORANGE PALETTE -->
+    <color name="orangeBright3">#FFCEC2</color>
+    <color name="orangeBright2">#FF8D70</color>
+    <color name="orangeBright1">#FF5C33</color>
+    <color name="orange">#FF4A1C</color>
+    <color name="orangeDark1">#FF3B0A</color>
+    <color name="orangeDark2">#CC2900</color>
+    <color name="orangeDark3">#A32100</color>
+
+    <!-- SPICY MIX PALETTE -->
+    <color name="spicyMixBright3">#BC8A76</color>
+    <color name="spicyMixBright2">#AE735B</color>
+    <color name="spicyMixBright1">#96604A</color>
+    <color name="spicyMix">#81523F</color>
+    <color name="spicyMixDark1">#7B4E3D</color>
+    <color name="spicyMixDark2">#442B22</color>
+    <color name="spicyMixDark3">#1B110E</color>
+</resources>

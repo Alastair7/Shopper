@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "454801161871",
+    "project_id": "shopperbeta-571f6",
+    "storage_bucket": "shopperbeta-571f6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:454801161871:android:fcd311ecdc7fb499277afa",
+        "android_client_info": {
+          "package_name": "com.example.shopperbeta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "454801161871-eu5m4dhvljnse9d1ovi7tihs7s9n5kmq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbJfy63rIreOS288ThQG_-oHIfl5mTkNY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "454801161871-eu5m4dhvljnse9d1ovi7tihs7s9n5kmq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

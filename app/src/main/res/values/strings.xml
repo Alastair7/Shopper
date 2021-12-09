@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">ShopperBeta</string>
+
+    <!-- GENERAL SCREENS -->
+    <string name="emailText">Email</string>
+    <string name="passwordText">Password</string>
+    <string name="passwordConfirmText">Confirm Password</string>
+    <string name="cancelText">Cancel</string>
+    <string name="errorText">ERROR</string>
+    <string name="emptyText" />
+    <!-- REGISTER SCREEN -->
+    <string name="registerTitleText">Create a Shopper account</string>
+    <string name="registerButtonText">Register</string>
+    <!-- LOGIN SCREEN -->
+    <string name="loginButtonText">Login</string>
+    <string name="loginRegisterText">You don\'t have an account? Register here!</string>
+    <string name="loginGoogleButtonText">Login with google</string>
+    <string name="loginGoogleButtonImageDescription">Google logo acting as an icon.</string>
+    <string name="errorLoginMessage">Email or password are incorrect</string>
+    <!-- HOME SCREEN -->
+    <string name="usernameText">USERNAME</string>
+    <string name="userStateText">SOME STATE HERE</string>
+    <string name="userFavoriteLists">Favorite User List</string>
+    <string name="userLists">User Lists</string>
+    <string name="newListButtonText">Add List</string>
+
+
+</resources>
