@@ -8,6 +8,34 @@
     <string name="cancelText">Cancel</string>
     <string name="errorText">ERROR</string>
     <string name="emptyText" />
+
+    <!-- ALERT DIALOGS TEXT -->
+    <!-- NEW LIST -->
+    <string name="builderNewListText">New List</string>
+    <string name="builderAddEditViewHintText">Give a nice name to your list</string>
+    <string name="builderNegativeButtonText">Cancel</string>
+    <string name="builderPositiveAddButtonText">Add</string>
+    <!-- UPDATE LIST -->
+    <string name="builderUpdateListText">Update List</string>
+    <string name="builderUpdateEditViewHintText">Give a new name to this list</string>
+    <string name="builderPositiveUpdateButtonText">Update</string>
+
+    <!-- NEW ELEMENT -->
+    <string name="builderNewElementText">New Element</string>
+    <string name="buildNewElementHintText">Element Name</string>
+    <string name="builderAddElementPositiveButtonText">Add Element</string>
+
+    <!-- UPDATE ELEMENT -->
+    <string name="builderUpdateElementText">Update Element</string>
+    <string name="buildUpdateElementHintText">Give this element a new name</string>
+    <string name="builderUpdateElementPositiveButtonText">Update Element</string>
+
+    <!-- SET DISPLAY NAME -->
+    <string name="builderSetDisplayNameText">Set your nickname</string>
+    <string name="builderSetDisplayNameHint">Nickname</string>
+    <string name="builderSetDisplayNameButtonText">Set</string>
+
+
     <!-- REGISTER SCREEN -->
     <string name="registerTitleText">Create a Shopper account</string>
     <string name="registerButtonText">Register</string>
@@ -19,10 +47,11 @@
     <string name="errorLoginMessage">Email or password are incorrect</string>
     <!-- HOME SCREEN -->
     <string name="usernameText">USERNAME</string>
-    <string name="userStateText">SOME STATE HERE</string>
-    <string name="userFavoriteLists">Favorite User List</string>
     <string name="userLists">User Lists</string>
     <string name="newListButtonText">Add List</string>
+
+    <!-- ELEMENTS SCREEN -->
+    <string name="createdByText">Created By %s</string>
 
 
 </resources>

@@ -8,8 +8,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="14dp"
-        android:textSize="24sp"
-        android:text="ElementName" />
+        android:text="ElementName"
+        android:textColor="@color/astronautDark1"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/itemLblElementAuthor"
@@ -18,6 +19,7 @@
         android:layout_below="@id/itemLblElementName"
         android:layout_marginLeft="16dp"
         android:text="ElementAuthor"
+        android:textColor="@color/cornflowerBlueDark2"
         android:textSize="16sp" />
 
     <View

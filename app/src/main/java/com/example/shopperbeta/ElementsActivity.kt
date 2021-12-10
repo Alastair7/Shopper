@@ -1,6 +1,6 @@
 package com.example.shopperbeta
 
-import android.content.DialogInterface
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.InputType
@@ -11,16 +11,13 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shopperbeta.adapters.ElementAdapter
-import com.example.shopperbeta.adapters.UserListAdapter
 import com.example.shopperbeta.models.ListElement
-import com.example.shopperbeta.models.UserList
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import kotlinx.android.synthetic.main.activity_elements.*
-import kotlinx.android.synthetic.main.activity_home.*
 
 class ElementsActivity : AppCompatActivity() {
     private val db: FirebaseFirestore = FirebaseFirestore.getInstance()
@@ -29,35 +26,36 @@ class ElementsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_elements)
+        enableBackButton()
 
         val bundle: Bundle? = intent.extras
-        var listid = bundle?.getString("listid").toString()
-        var listName = bundle?.getString("listName").toString()
+        val listid = bundle?.getString("listid").toString()
+        val listName = bundle?.getString("listName").toString()
 
         lblElementListName.text = listName
 
         val collectionReference: CollectionReference = db.collection("listElements").document(listid).collection("elements")
         buttonElementShare.setOnClickListener{
             // Configure Builder and show alertDialog
-            var builder = AlertDialog.Builder(this)
+            val builder = AlertDialog.Builder(this)
 
             builder.setTitle("Share List")
 
-            var editEmail = EditText(this)
+            val editEmail = EditText(this)
             editEmail.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_CAP_WORDS
             editEmail.hint = "User email"
             builder.setView(editEmail)
 
             // Builder buttons config
-            builder.setPositiveButton("Share", DialogInterface.OnClickListener{dialog, which ->
-                var editListEmail = editEmail.text.toString()
+            builder.setPositiveButton("Share") { _, _ ->
+                val editListEmail = editEmail.text.toString()
                 shareList(editListEmail)
 
-            })
-            builder.setNegativeButton("Cancel", DialogInterface.OnClickListener{dialog, which -> dialog.cancel() })
+            }
+            builder.setNegativeButton("Cancel") { dialog, _ -> dialog.cancel() }
 
             // Show builder
-            var alertDialog = builder.create()
+            val alertDialog = builder.create()
             alertDialog.show()
         }
 
@@ -67,16 +65,17 @@ class ElementsActivity : AppCompatActivity() {
 
         buttonElementAdd.setOnClickListener {
             // Configure Builder and show alertDialog
-            var builder = AlertDialog.Builder(this)
-            builder.setTitle("New Element")
-            var editName = EditText(this)
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle(getString(R.string.builderNewElementText))
+            val editName = EditText(this)
             editName.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_CAP_WORDS
-            editName.hint = "Element name"
+            editName.hint = getString(R.string.buildNewElementHintText)
             builder.setView(editName)
 
             // Builder buttons config
-            builder.setPositiveButton("Add", DialogInterface.OnClickListener{ dialog, which ->
-                var elementName = editName.text.toString()
+            builder.setPositiveButton(getString(R.string.builderAddElementPositiveButtonText)
+            ) { _, _ ->
+                val elementName = editName.text.toString()
                 val addElement = hashMapOf(
                     "elementName" to elementName,
                     "elementAuthor" to FirebaseAuth.getInstance().currentUser?.displayName.toString(),
@@ -84,18 +83,19 @@ class ElementsActivity : AppCompatActivity() {
                 )
                 collectionReference.document(addElement["elementid"].toString()).set(addElement)
 
-            })
-            builder.setNegativeButton("Cancel", DialogInterface.OnClickListener{ dialog, which -> dialog.cancel() })
+            }
+            builder.setNegativeButton(getString(R.string.builderNegativeButtonText)
+            ) { dialog, _ -> dialog.cancel() }
 
             // Show builder
-            var alertDialog = builder.create()
+            val alertDialog = builder.create()
             alertDialog.show()
         }
     }
 
     private fun configureRecyclerView(){
         val bundle: Bundle? = intent.extras
-        var listid = bundle?.getString("listid").toString()
+        val listid = bundle?.getString("listid").toString()
 
         val collectionReference: CollectionReference = db.collection("listElements").document(listid).collection("elements")
         val query: Query = collectionReference
@@ -126,10 +126,11 @@ class ElementsActivity : AppCompatActivity() {
         val itemTouchHelper = ItemTouchHelper(itemTouchHelperCallback)
         itemTouchHelper.attachToRecyclerView(recyclerElementView)
     }
+
     private fun shareList(userEmail: String){
         val bundle: Bundle? = intent.extras
-        var listid = bundle?.getString("listid").toString()
-        var listName = bundle?.getString("listName").toString()
+        val listid = bundle?.getString("listid").toString()
+        val listName = bundle?.getString("listName").toString()
 
         // Check if user exists
         if(userEmail.isNotEmpty()) {
@@ -158,6 +159,12 @@ class ElementsActivity : AppCompatActivity() {
 
     }
 
+    private fun enableBackButton(){
+        val actionBar = supportActionBar
+        actionBar!!.title = getString(R.string.app_name)
+        actionBar.setDisplayHomeAsUpEnabled(true)
+
+    }
 
     override fun onStart() {
         super.onStart()
@@ -167,5 +174,10 @@ class ElementsActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         elementAdapter?.stopListening()
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

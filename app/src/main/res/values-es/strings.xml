@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ShopperBeta</string>
+
+    <!-- GENERAL SCREENS -->
+    <string name="emailText">Correo Electrónico</string>
+    <string name="passwordText">Contraseña</string>
+    <string name="passwordConfirmText">Confirmar Contraseña</string>
+    <string name="cancelText">Cancelar</string>
+    <string name="errorText">ERROR</string>
+    <string name="emptyText" />
+
+    <!-- ALERT DIALOG TEXT -->
+    <!-- LISTA  NUEVA -->
+    <string name="builderNewListText">Nueva Lista</string>
+    <string name="builderAddEditViewHintText">Ponle un nombre guay a tu lista</string>
+    <string name="builderPositiveAddButtonText">Añadir</string>
+    <string name="builderNegativeButtonText">Cancelar</string>
+    <!-- EDITAR LISTA -->
+    <string name="builderUpdateListText">Editar lista</string>
+    <string name="builderUpdateEditViewHintText">Ponle un nuevo nombre a tu lista</string>
+    <string name="builderPositiveUpdateButtonText">Actualizar</string>
+
+    <!-- NEW ELEMENT -->
+    <string name="builderNewElementText">Nuevo Elemento</string>
+    <string name="buildNewElementHintText">Nombre del elemento</string>
+    <string name="builderAddElementPositiveButtonText">Añadir Elemento</string>
+
+    <!-- UPDATE ELEMENT -->
+    <string name="builderUpdateElementText">Editar Elemento</string>
+    <string name="buildUpdateElementHintText">Ponle un nuevo nombre a este elemento</string>
+    <string name="builderUpdateElementPositiveButtonText">Editar Elemento</string>
+
+    <!-- NUEVO APODO -->
+    <string name="builderSetDisplayNameText">Añade un apodo</string>
+    <string name="builderSetDisplayNameHint">Apodo</string>
+    <string name="builderSetDisplayNameButtonText">Añadir</string>
+    <!-- FIN ALERT DIALOG TEXT -->
+
+    <!-- PANTALLA DE REGISTRO -->
+    <string name="registerTitleText">Crear una cuenta Shopper</string>
+    <string name="registerButtonText">Registrar</string>
+
+    <!-- PANTALLA DE LOGIN -->
+    <string name="loginButtonText">Entrar</string>
+    <string name="loginRegisterText">No tienes cuenta? Regístrate!</string>
+    <string name="loginGoogleButtonText">Login with google</string>
+    <string name="loginGoogleButtonImageDescription">Google logo acting as an icon.</string>
+    <string name="errorLoginMessage">Email o contraseña incorrectos</string>
+
+    <!-- PANTALLA DE INICIO -->
+    <string name="usernameText">Usuario</string>
+    <string name="userLists">User Lists</string>
+    <string name="newListButtonText">Añadir Lista</string>
+
+    <!-- PANTALLA DE ELEMENTOS -->
+    <string name="createdByText">Creado por %s </string>
+
+
+
+</resources>

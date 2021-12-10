@@ -1,7 +1,5 @@
 package com.example.shopperbeta.adapters
 
-import android.app.Activity
-import android.content.DialogInterface
 import android.content.Intent
 import android.text.InputType
 import android.view.LayoutInflater
@@ -16,11 +14,8 @@ import com.example.shopperbeta.R
 import com.example.shopperbeta.models.UserList
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.item_userlist.view.*
 
 class UserListAdapter(options: FirestoreRecyclerOptions<UserList>) :
@@ -35,8 +30,8 @@ class UserListAdapter(options: FirestoreRecyclerOptions<UserList>) :
     override fun onBindViewHolder(holder: UserListVH, position: Int, model: UserList) {
         holder.listName.text = model.listName
         holder.itemView.setOnClickListener {
-            var userListid:String = snapshots[position].listid
-            var userListname: String = snapshots[position].listName
+            val userListid:String = snapshots[position].listid
+            val userListname: String = snapshots[position].listName
             val itemIntent : Intent = Intent(holder.itemView.context, ElementsActivity::class.java).apply {
                 putExtra("listid", userListid)
                 putExtra("listName", userListname)
@@ -47,32 +42,34 @@ class UserListAdapter(options: FirestoreRecyclerOptions<UserList>) :
         // If element is pressed longer than normal then update dialog will pop up
         holder.itemView.setOnLongClickListener{
             // Configure Builder and show alertDialog
-            var builder = AlertDialog.Builder(holder.itemView.context)
-            builder.setTitle("New List")
-            var editName = EditText(holder.itemView.context)
+            val builder = AlertDialog.Builder(holder.itemView.context)
+            builder.setTitle(holder.itemView.context.getString(R.string.builderUpdateListText))
+            val editName = EditText(holder.itemView.context)
             editName.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_CAP_WORDS
             editName.setText(model.listName)
             editName.setSelection(editName.text.length)
-            editName.hint = "Rename this list"
+            editName.hint = holder.itemView.context.getString(R.string.builderUpdateEditViewHintText)
             builder.setView(editName)
 
             // Builder buttons config
-            builder.setPositiveButton("Update", DialogInterface.OnClickListener{ dialog, which ->
-                var editListName = editName.text.toString()
-                val currentUser: String = FirebaseAuth.getInstance().currentUser?.email.toString()
-                //val collectionReference = FirebaseFirestore.getInstance().collection("userLists").document(currentUser).collection("lists").document(model.listid)
+            builder.setPositiveButton(holder.itemView.context.getString(R.string.builderPositiveUpdateButtonText)
+            ) { _, _ ->
+                val editListName = editName.text.toString()
+                //val currentUser: String = FirebaseAuth.getInstance().currentUser?.email.toString()
                 val updateList = hashMapOf(
                     "listName" to editListName,
                 )
 
-                val collectionReference = snapshots.getSnapshot(holder.bindingAdapterPosition).reference
+                val collectionReference =
+                    snapshots.getSnapshot(holder.bindingAdapterPosition).reference
                 collectionReference.update(updateList as Map<String, Any>)
 
-            })
-            builder.setNegativeButton("Cancel", DialogInterface.OnClickListener{ dialog, which -> dialog.cancel() })
+            }
+            builder.setNegativeButton(holder.itemView.context.getString(R.string.builderNegativeButtonText)
+            ) { dialog, _ -> dialog.cancel() }
 
             // Show builder
-            var alertDialog = builder.create()
+            val alertDialog = builder.create()
             alertDialog.show()
             true
         }
@@ -81,8 +78,8 @@ class UserListAdapter(options: FirestoreRecyclerOptions<UserList>) :
 
     fun deleteItem(position: Int){
         // Get list ID and elementList reference then iterate through it elements collection and delete every item, after that delete the document
-        var listid: String = snapshots.getSnapshot(position).id
-        var elementListRef: DocumentReference = FirebaseFirestore.getInstance().collection("listElements").document(listid)
+        val listid: String = snapshots.getSnapshot(position).id
+        val elementListRef: DocumentReference = FirebaseFirestore.getInstance().collection("listElements").document(listid)
         elementListRef.collection("elements").get().addOnSuccessListener {elements ->
             for(element in elements){
                 element.reference.delete()

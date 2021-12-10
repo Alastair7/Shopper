@@ -9,6 +9,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main.*
 
+
 class MainActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
 
@@ -17,6 +18,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         auth = Firebase.auth
+
+
 
         // Login Edit Text
         val email = editLoginEmail
@@ -38,14 +41,15 @@ class MainActivity : AppCompatActivity() {
 
             auth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
                 if(it.isSuccessful){
+                    errorLogin.text = getString(R.string.emptyText)
+
                     // Navigate to Home Screen
                         val loginIntent = Intent(this,HomeActivity::class.java)
                         Toast.makeText(this, "Authentication Succeed", Toast.LENGTH_SHORT).show()
                     startActivity(loginIntent)
                     finish()
                 } else {
-                    Toast.makeText(this, "Authentication failed.",
-                        Toast.LENGTH_SHORT).show()
+                    errorLogin.text = getString(R.string.errorLoginMessage)
                 }
             }
         }else{
@@ -53,4 +57,5 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
 }

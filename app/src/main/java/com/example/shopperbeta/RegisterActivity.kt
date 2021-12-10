@@ -43,7 +43,7 @@ class RegisterActivity : AppCompatActivity() {
     private fun registerUser(email: String, password: String){
         auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener {
             val db = Firebase.firestore
-             val newUser: User = User("","","")
+             val newUser = User("","")
 
 
             if(it.isSuccessful){
@@ -55,14 +55,12 @@ class RegisterActivity : AppCompatActivity() {
                 if (firebaseUser != null) {
                     newUser.userid = firebaseUser.uid
                     newUser.userEmail = email
-                    newUser.userDisplayName = ""
                 }
 
                 // Put User in hashmap and create a new user in Firestore database
                 val addUser = hashMapOf(
                     "userid" to newUser.userid,
                     "userEmail" to newUser.userEmail,
-                    "userDisplayName" to newUser.userDisplayName
                 )
                 db.collection("users").document(newUser.userEmail).set(addUser)
 

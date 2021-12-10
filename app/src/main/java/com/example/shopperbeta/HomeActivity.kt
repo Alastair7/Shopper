@@ -1,6 +1,5 @@
 package com.example.shopperbeta
 
-import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,7 +10,6 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shopperbeta.adapters.UserListAdapter
-import com.example.shopperbeta.models.User
 import com.example.shopperbeta.models.UserList
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.auth.FirebaseAuth
@@ -35,16 +33,16 @@ class HomeActivity : AppCompatActivity() {
         if (currentUser != null) {
             if(currentUser!!.displayName.isNullOrEmpty()){
                 // Configure Builder and show alertDialog
-                var builder = AlertDialog.Builder(this)
-                builder.setTitle("Set your nickname")
-                var editName = EditText(this)
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle(getString(R.string.builderSetDisplayNameText))
+                val editName = EditText(this)
                 editName.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_CAP_WORDS
-                editName.hint = "Nickname"
+                editName.hint = getString(R.string.builderSetDisplayNameHint)
                 builder.setView(editName)
 
                 // Builder buttons config
-                builder.setPositiveButton("Set", DialogInterface.OnClickListener{dialog, which ->
-                    var setDisplayName = editName.text.toString()
+                builder.setPositiveButton(getString(R.string.builderSetDisplayNameButtonText)) { _, _ ->
+                    val setDisplayName = editName.text.toString()
                     val profileUpdates = userProfileChangeRequest {
                         displayName = setDisplayName
                     }
@@ -52,11 +50,11 @@ class HomeActivity : AppCompatActivity() {
                     currentUser!!.updateProfile(profileUpdates)
                     lblHomeUsername.text = currentUser?.displayName.toString()
 
-                })
-                builder.setNegativeButton("Cancel", DialogInterface.OnClickListener{dialog, which -> dialog.cancel() })
+                }
+                builder.setNegativeButton(R.string.builderNegativeButtonText) { dialog, _ -> dialog.cancel() }
 
                 // Show builder
-                var alertDialog = builder.create()
+                val alertDialog = builder.create()
                 alertDialog.show()
             }
         }
@@ -73,18 +71,19 @@ class HomeActivity : AppCompatActivity() {
         configureRecyclerView()
         buttonHomeAddList.setOnClickListener {
             // Configure Builder and show alertDialog
-            var builder = AlertDialog.Builder(this)
+            val builder = AlertDialog.Builder(this)
 
-            builder.setTitle("New List")
+            builder.setTitle(getString(R.string.builderNewListText))
 
-            var editName = EditText(this)
+            val editName = EditText(this)
             editName.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_CAP_WORDS
-            editName.hint = "Give a nice name to your list"
+            editName.hint = getString(R.string.builderAddEditViewHintText)
             builder.setView(editName)
 
             // Builder buttons config
-            builder.setPositiveButton("Add", DialogInterface.OnClickListener{dialog, which ->
-                var editListName = editName.text.toString()
+            builder.setPositiveButton(getString(R.string.builderPositiveAddButtonText)
+            ) { _, _ ->
+                val editListName = editName.text.toString()
 
 
                 val addList = hashMapOf(
@@ -93,11 +92,12 @@ class HomeActivity : AppCompatActivity() {
                 )
                 collectionReference.document(addList["listid"].toString()).set(addList)
 
-            })
-            builder.setNegativeButton("Cancel", DialogInterface.OnClickListener{dialog, which -> dialog.cancel() })
+            }
+            builder.setNegativeButton(getString(R.string.builderNegativeButtonText)
+            ) { dialog, _ -> dialog.cancel() }
 
             // Show builder
-            var alertDialog = builder.create()
+            val alertDialog = builder.create()
             alertDialog.show()
         }
     }
