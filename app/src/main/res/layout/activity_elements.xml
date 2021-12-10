@@ -14,7 +14,7 @@
         android:layout_height="32dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="LIST NAME"
+        android:text="@string/lblElementsListName"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -42,7 +42,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="@color/astronautDark2"
-        android:text="ADD"
+        android:text="@string/buttonElementsAddText"
         android:textSize="12sp"
         android:textStyle="bold"
         app:icon="@android:drawable/ic_input_add"
@@ -59,6 +59,7 @@
         app:layout_constraintStart_toEndOf="@+id/lblElementListName"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeShareDrawable"
-        app:tint="#ED6941" />
+        app:tint="#ED6941"
+        android:contentDescription="@string/buttonShareContentDescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

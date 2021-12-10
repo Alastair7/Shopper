@@ -49,9 +49,19 @@
     <string name="usernameText">USERNAME</string>
     <string name="userLists">User Lists</string>
     <string name="newListButtonText">Add List</string>
+    <string name="homeEmptyListText">Empty List</string>
+    <string name="imgProfileIconContentDescription">Profile icon</string>
+    <string name="buttonHomeLogout">Logout</string>
 
     <!-- ELEMENTS SCREEN -->
     <string name="createdByText">Created By %s</string>
+    <string name="lblElementsListName">LIST NAME</string>
+    <string name="buttonElementsAddText">ADD</string>
+    <string name="buttonShareContentDescription">Share icon</string>
+
+    <!-- ITEM ELEMENT LAYOUT -->
+    <string name="itemElementName">ElementName</string>
+    <string name="itemElementAuthor">ElementAuthor</string>
 
 
 </resources>

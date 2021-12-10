@@ -48,13 +48,24 @@
     <string name="loginGoogleButtonImageDescription">Google logo acting as an icon.</string>
     <string name="errorLoginMessage">Email o contraseña incorrectos</string>
 
+
     <!-- PANTALLA DE INICIO -->
     <string name="usernameText">Usuario</string>
     <string name="userLists">User Lists</string>
     <string name="newListButtonText">Añadir Lista</string>
+    <string name="homeEmptyListText">Lista vacía</string>
+    <string name="imgProfileIconContentDescription">Icono Perfil</string>
+    <string name="buttonHomeLogout">Desconectar</string>
 
     <!-- PANTALLA DE ELEMENTOS -->
     <string name="createdByText">Creado por %s </string>
+    <string name="lblElementsListName">NOMBRE LISTA</string>
+    <string name="buttonElementsAddText">AÑADIR</string>
+    <string name="buttonShareContentDescription">Icono de añadir</string>
+
+    <!-- LAYOUT DE UN ELEMENTO DE LA LISTA -->
+    <string name="itemElementName">NombreElemento</string>
+    <string name="itemElementAuthor">AutorElemento</string>
 
 
 
