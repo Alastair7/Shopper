@@ -39,20 +39,20 @@ class ElementsActivity : AppCompatActivity() {
             // Configure Builder and show alertDialog
             val builder = AlertDialog.Builder(this)
 
-            builder.setTitle("Share List")
+            builder.setTitle(getString(R.string.builderShareListText))
 
             val editEmail = EditText(this)
             editEmail.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_CAP_WORDS
-            editEmail.hint = "User email"
+            editEmail.hint = getString(R.string.builderShareEditHintText)
             builder.setView(editEmail)
 
             // Builder buttons config
-            builder.setPositiveButton("Share") { _, _ ->
+            builder.setPositiveButton(getString(R.string.builderPositiveShareButtonText)) { _, _ ->
                 val editListEmail = editEmail.text.toString()
                 shareList(editListEmail)
 
             }
-            builder.setNegativeButton("Cancel") { dialog, _ -> dialog.cancel() }
+            builder.setNegativeButton(getString(R.string.builderNegativeButtonText)) { dialog, _ -> dialog.cancel() }
 
             // Show builder
             val alertDialog = builder.create()
@@ -143,16 +143,16 @@ class ElementsActivity : AppCompatActivity() {
                     // Share List
                     db.collection("userLists").document(userEmail).collection("lists")
                         .document(listid).set(shareList)
-                    Toast.makeText(this, "Success Shared", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.toastShareSuccessShared), Toast.LENGTH_SHORT).show()
 
                 } else {
                     // user does not exist
-                    Toast.makeText(this, "User is not registered in Shopper", Toast.LENGTH_SHORT)
+                    Toast.makeText(this, getString(R.string.toastShareUserNotFound), Toast.LENGTH_SHORT)
                         .show()
                 }
             }
         }else {
-            Toast.makeText(this, "User Email is empty", Toast.LENGTH_SHORT)
+            Toast.makeText(this, getString(R.string.toastShareEmptyEmail), Toast.LENGTH_SHORT)
                 .show()
 
         }

@@ -20,6 +20,11 @@
     <string name="builderUpdateEditViewHintText">Give a new name to this list</string>
     <string name="builderPositiveUpdateButtonText">Update</string>
 
+    <!-- SHARE LIST  -->
+    <string name="builderShareListText">Share List</string>
+    <string name="builderShareEditHintText">Your friend email to share this list</string>
+    <string name="builderPositiveShareButtonText">Share</string>
+
     <!-- NEW ELEMENT -->
     <string name="builderNewElementText">New Element</string>
     <string name="buildNewElementHintText">Element Name</string>
@@ -48,7 +53,7 @@
     <!-- HOME SCREEN -->
     <string name="usernameText">USERNAME</string>
     <string name="userLists">User Lists</string>
-    <string name="newListButtonText">Add List</string>
+    <string name="newListButtonText">New List</string>
     <string name="homeEmptyListText">Empty List</string>
     <string name="imgProfileIconContentDescription">Profile icon</string>
     <string name="buttonHomeLogout">Logout</string>
@@ -58,6 +63,9 @@
     <string name="lblElementsListName">LIST NAME</string>
     <string name="buttonElementsAddText">ADD</string>
     <string name="buttonShareContentDescription">Share icon</string>
+    <string name="toastShareSuccessShared">You shared this list!</string>
+    <string name="toastShareUserNotFound">User is not registered in Shopper</string>
+    <string name="toastShareEmptyEmail">User Email is empty</string>
 
     <!-- ITEM ELEMENT LAYOUT -->
     <string name="itemElementName">ElementName</string>

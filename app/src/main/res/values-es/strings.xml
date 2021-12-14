@@ -21,12 +21,17 @@
     <string name="builderUpdateEditViewHintText">Ponle un nuevo nombre a tu lista</string>
     <string name="builderPositiveUpdateButtonText">Actualizar</string>
 
-    <!-- NEW ELEMENT -->
+    <!-- COMPARTIR LISTA  -->
+    <string name="builderShareListText">Compartir Lista</string>
+    <string name="builderShareEditHintText">Correo electrónico de tu amigo</string>
+    <string name="builderPositiveShareButtonText">Compartir</string>
+
+    <!-- ELEMENTO NUEVO -->
     <string name="builderNewElementText">Nuevo Elemento</string>
     <string name="buildNewElementHintText">Nombre del elemento</string>
     <string name="builderAddElementPositiveButtonText">Añadir Elemento</string>
 
-    <!-- UPDATE ELEMENT -->
+    <!-- EDITAR ELEMENTO -->
     <string name="builderUpdateElementText">Editar Elemento</string>
     <string name="buildUpdateElementHintText">Ponle un nuevo nombre a este elemento</string>
     <string name="builderUpdateElementPositiveButtonText">Editar Elemento</string>
@@ -52,7 +57,7 @@
     <!-- PANTALLA DE INICIO -->
     <string name="usernameText">Usuario</string>
     <string name="userLists">User Lists</string>
-    <string name="newListButtonText">Añadir Lista</string>
+    <string name="newListButtonText">Nueva Lista</string>
     <string name="homeEmptyListText">Lista vacía</string>
     <string name="imgProfileIconContentDescription">Icono Perfil</string>
     <string name="buttonHomeLogout">Desconectar</string>
@@ -62,6 +67,9 @@
     <string name="lblElementsListName">NOMBRE LISTA</string>
     <string name="buttonElementsAddText">AÑADIR</string>
     <string name="buttonShareContentDescription">Icono de añadir</string>
+    <string name="toastShareSuccessShared">Compartiste la lista!</string>
+    <string name="toastShareUserNotFound">Este usuario no está registrado en Shopper</string>
+    <string name="toastShareEmptyEmail">No se ha introducido ningún correo electrónico</string>
 
     <!-- LAYOUT DE UN ELEMENTO DE LA LISTA -->
     <string name="itemElementName">NombreElemento</string>
