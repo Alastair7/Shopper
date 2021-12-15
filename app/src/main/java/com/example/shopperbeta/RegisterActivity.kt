@@ -30,9 +30,15 @@ class RegisterActivity : AppCompatActivity() {
 
             // Fields validation and if its correct then register the user
             if(email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()) {
+                errorRegisterText.text = getString(R.string.emptyText)
                 if(password == confirmPassword){
                     registerUser(email,password)
+                }else{
+                    errorRegisterText.text = getString(R.string.emptyText)
+                    errorRegisterText.text = getString(R.string.errorPasswordDontMatch)
                 }
+            }else{
+                errorRegisterText.text = getString(R.string.errorEmptyFields)
             }
         }
         buttonRegisterCancel.setOnClickListener {

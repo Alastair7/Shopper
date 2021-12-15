@@ -45,6 +45,8 @@
     <!-- PANTALLA DE REGISTRO -->
     <string name="registerTitleText">Crear una cuenta Shopper</string>
     <string name="registerButtonText">Registrar</string>
+    <string name="errorPasswordDontMatch">La contraseña no coincide.</string>
+    <string name="errorEmptyFields">Campos vacíos o datos incorrectos.</string>
 
     <!-- PANTALLA DE LOGIN -->
     <string name="loginButtonText">Entrar</string>

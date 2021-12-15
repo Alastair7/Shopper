@@ -123,7 +123,7 @@
             tools:ignore="SpeakableTextPresentCheck,DuplicateSpeakableTextCheck" />
 
         <TextView
-            android:id="@+id/errorRegisterConfirmPassword"
+            android:id="@+id/errorRegisterText"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:text="@string/emptyText"

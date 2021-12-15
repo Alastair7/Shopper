@@ -44,6 +44,8 @@
     <!-- REGISTER SCREEN -->
     <string name="registerTitleText">Create a Shopper account</string>
     <string name="registerButtonText">Register</string>
+    <string name="errorPasswordDontMatch">Password do not match.</string>
+    <string name="errorEmptyFields">Empty or invalid data was introduced.</string>
     <!-- LOGIN SCREEN -->
     <string name="loginButtonText">Login</string>
     <string name="loginRegisterText">You don\'t have an account? Register here!</string>
